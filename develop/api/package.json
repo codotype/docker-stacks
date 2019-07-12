@@ -1,0 +1,19 @@
+{
+  "name": "codotype-docker-stacks-develop-api",
+  "version": "0.1.0",
+  "author": "Alexander Schwartzberg <aeksco@gmail.com>",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./www.js",
+    "dev": "nodemon -L ./www.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@codotype/api": "^0.1.4",
+    "@codotype/runtime": "^0.7.0",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.2"
+  }
+}
