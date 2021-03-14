@@ -13,11 +13,11 @@
     "license": "MIT",
     "dependencies": {
         "@codotype/core": "^0.8.0-canary.9",
-        "@codotype/ui": "^0.8.0-canary.40",
+        "@codotype/ui": "^0.8.0-canary.41",
         "next": "^9.0.1",
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
-        "tailwindcss": "^1.8.10"
+        "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2"
     },
     "devDependencies": {
         "@types/node": "^12.6.2",
