@@ -1,19 +1,7 @@
 import * as React from "react";
-// import { AppNavbar } from "@codotype/ui/dist/src/components/navbar";
 import dynamic from "next/dynamic";
 import { PluginFetcher } from "@codotype/ui/dist/src/pages/web_runtime/PluginFetcher";
 import { PluginRunner } from "@codotype/ui/dist/src/pages/web_runtime/PluginRunner";
-// import { ProjectEditor } from "@codotype/ui/dist/src/components/ProjectEditor";
-// import { LocalStorageProvider } from "@codotype/ui/dist/src/pages/web_runtime/LocalStorageProvider";
-
-// const LocalRuntime = dynamic(
-//     import("@codotype/ui/dist/src/pages/web_runtime/LocalRuntime").then(
-//         mod => mod.LocalRuntime,
-//     ),
-//     {
-//         ssr: false,
-//     },
-// );
 
 const LocalStorageProvider = dynamic(
     import("@codotype/ui/dist/src/pages/web_runtime/LocalStorageProvider").then(
@@ -36,7 +24,6 @@ const ProjectEditor = dynamic(
 // // // //
 
 export default () => {
-    // return <p>Codotype</p>;
     return (
         <PluginFetcher>
             {({ plugins }) => (

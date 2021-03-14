@@ -13,6 +13,7 @@
     "license": "MIT",
     "dependencies": {
         "@codotype/core": "^0.8.0-canary.9",
+        "@codotype/runtime": "^0.8.0-canary.7",
         "@codotype/ui": "^0.8.0-canary.41",
         "next": "^9.0.1",
         "react": "^16.8.6",
