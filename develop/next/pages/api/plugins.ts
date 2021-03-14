@@ -13,7 +13,7 @@ const runtime = new NodeRuntime({
 // // // //
 
 // GET /api/plugins
-export default async (req: any, res: any) => {
+export default async (_req: any, res: any) => {
     // Registers this generator via relative path
     try {
         await runtime.registerPlugin({

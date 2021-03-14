@@ -1,9 +1,8 @@
 version: "3"
 
 services:
-
-  codotype:
-    container_name: codotype-dev
-    build: ./
-    ports:
-      - "4000:4000"
+    codotype:
+        container_name: codotype-dev
+        build: ./
+        ports:
+            - "3000:3000"

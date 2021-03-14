@@ -4,6 +4,7 @@ import { PluginFetcher } from "@codotype/ui/dist/src/pages/web_runtime/PluginFet
 import { PluginRunner } from "@codotype/ui/dist/src/pages/web_runtime/PluginRunner";
 
 const LocalStorageProvider = dynamic(
+    // @ts-ignore
     import("@codotype/ui/dist/src/pages/web_runtime/LocalStorageProvider").then(
         mod => mod.LocalStorageProvider,
     ),
@@ -13,6 +14,7 @@ const LocalStorageProvider = dynamic(
 );
 
 const ProjectEditor = dynamic(
+    // @ts-ignore
     import("@codotype/ui/dist/src/components/ProjectEditor").then(
         mod => mod.ProjectEditor,
     ),
@@ -24,14 +26,20 @@ const ProjectEditor = dynamic(
 // // // //
 
 export default () => {
+    if (typeof window === "undefined") {
+        return <p>Server Render</p>;
+    }
     return (
         <PluginFetcher>
             {({ plugins }) => (
                 <PluginRunner plugin={plugins[0]}>
                     {({ generateCode }) => (
+                        // @ts-ignore
                         <LocalStorageProvider plugin={plugins[0]}>
+                            {/* @ts-ignore */}
                             {({ projectInput, clearProject, setProject }) => (
                                 <ProjectEditor
+                                    // @ts-ignore
                                     plugin={plugins[0]}
                                     projectInput={projectInput}
                                     onClickGenerate={() => {
