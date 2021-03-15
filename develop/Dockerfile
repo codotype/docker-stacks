@@ -1,5 +1,5 @@
 # Create image based on the official Node image from the dockerhub
-FROM node:latest
+FROM mhart/alpine-node:12
 
 # Create a directory where our app will be placed
 RUN mkdir -p /usr/src/app
