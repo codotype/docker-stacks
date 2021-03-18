@@ -1,10 +1,10 @@
+import * as path from "path"
 import { LocalFileSystemAdapter, NodeRuntime } from "@codotype/runtime";
 import { OUTPUT_DIRECTORY } from "@codotype/runtime/dist/constants";
 import { RuntimeLogBehaviors, ProjectBuild } from "@codotype/core";
 
-// Invoke runtime directly with parameters
 const runtime = new NodeRuntime({
-    cwd: process.cwd(),
+    cwd: path.relative(process.cwd(), "../plugin"),
     logBehavior: RuntimeLogBehaviors.normal,
     fileOverwriteBehavior: "force",
     fileSystemAdapter: new LocalFileSystemAdapter(),
