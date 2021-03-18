@@ -1,0 +1,33 @@
+{
+    "name": "codotype-web-next",
+    "version": "0.1.0",
+    "description": "A web project for running a Codotype plugin",
+    "main": "index.js",
+    "scripts": {
+        "dev": "next",
+        "build": "next build",
+        "export": "next export",
+        "start": "next start"
+    },
+    "author": "Alexander Schwartzberg",
+    "license": "MIT",
+    "dependencies": {
+        "@codotype/core": "^0.8.0-canary.9",
+        "@codotype/runtime": "^0.8.0-canary.7",
+        "@codotype/ui": "^0.8.0-canary.41",
+        "archiver": "^5.3.0",
+        "aws-sdk": "^2.866.0",
+        "next": "^10.0.4",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
+        "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2"
+    },
+    "devDependencies": {
+        "@types/archiver": "^5.1.0",
+        "@types/node": "^14.14.34",
+        "@types/react": "^16.8.23",
+        "@types/react-dom": "^16.8.4",
+        "postcss-preset-env": "^6.7.0",
+        "typescript": "^3.5.3"
+    }
+}

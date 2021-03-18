@@ -1,0 +1,5 @@
+.next/
+out/
+yarn-error.log
+.codotype-out/
+.env.local
