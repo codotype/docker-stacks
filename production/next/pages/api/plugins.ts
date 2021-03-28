@@ -12,6 +12,8 @@ const runtime = new NodeRuntime({
 
 // // // //
 
+// TODO - include pre-flight checks to ensure that all requisite ENV variables are defined
+
 // GET /api/plugins
 export default async (_req: any, res: any) => {
     // Registers this generator via relative path
