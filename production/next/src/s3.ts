@@ -23,8 +23,10 @@ const s3Client = new AWS.S3();
 
 // Uploads a build manifest to S3
 
-export function uploadBuildToS3(build: ProjectBuild) {
+export function uploadBuildToS3(props: { build: ProjectBuild }) {
     console.log("Uploading build JSON to S3...");
+
+    const { build } = props;
 
     return new Promise((resolve, reject) => {
         // Stringifies the JSON build object
