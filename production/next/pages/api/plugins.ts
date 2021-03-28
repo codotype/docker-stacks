@@ -18,6 +18,8 @@ export default async (_req: any, res: any) => {
     try {
         await runtime.registerPlugin({
             relativePath: "../plugin",
+            // absolutePath:
+            //     "/home/aeksco/code/codotype/codotype/packages/generators/codotype-generator-starter-kit",
         });
         const plugins = await runtime.getPlugins();
         res.statusCode = 200;
