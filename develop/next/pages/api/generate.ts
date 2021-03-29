@@ -1,4 +1,4 @@
-import * as path from "path"
+import * as path from "path";
 import { LocalFileSystemAdapter, NodeRuntime } from "@codotype/runtime";
 import { OUTPUT_DIRECTORY } from "@codotype/runtime/dist/constants";
 import { RuntimeLogBehaviors, ProjectBuild } from "@codotype/core";
@@ -22,16 +22,16 @@ export default async (req: any, res: any) => {
         });
 
         // Defines bodotype build
-        // FEATURE - verify ProjectInput here here
-        // TODO - add new ProjectBuild primative to core
+        // FEATURE - verify ProjectInput here
+        // TODO - add new ProjectBuild primative to core, i.e. "new Primatives.ProjectBuild({ ... })"
         const build: ProjectBuild = {
-            id: "text-build-local-docker",
+            id: "local-docker",
             projectInput: req.body.projectInput,
             startTime: "",
             endTime: "",
         };
 
-        // Generates the application
+        // Runs the build
         await runtime.execute({ build });
 
         // Sends the local directory path to the client
@@ -41,7 +41,7 @@ export default async (req: any, res: any) => {
                 process.cwd() +
                 OUTPUT_DIRECTORY +
                 build.projectInput.identifiers.snake,
-            type: "LOCAL_PATH",
+            type: "LOCAL_PATH", // TODO - pull this into enum
         });
         return;
     } catch (err) {
@@ -49,7 +49,7 @@ export default async (req: any, res: any) => {
         console.error(err);
         res.statusCode = 200;
         res.json({
-            type: "S3_DOWNLOAD",
+            type: "S3_DOWNLOAD", // TODO - pull this into enum
             url: "https://google.com",
         });
     }
