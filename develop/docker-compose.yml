@@ -2,7 +2,7 @@ version: "3"
 
 services:
     codotype:
-        container_name: codotype-prod
+        container_name: codotype-dev
         build: ./
         volumes:
             - /home/aeksco/code/codotype/codotype/packages/generators/codotype-generator-starter-kit:/usr/src/plugin
