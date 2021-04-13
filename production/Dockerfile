@@ -18,8 +18,8 @@ RUN yarn install
 # Build the client
 RUN yarn build
 
-# Expose port 3000
-EXPOSE 3000
+# Expose port 8080
+EXPOSE 8080
 
 # Start the Next.js app
 CMD [ "yarn", "start" ]

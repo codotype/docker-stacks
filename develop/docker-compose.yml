@@ -8,4 +8,4 @@ services:
             - /home/aeksco/code/codotype/codotype/packages/generators/codotype-generator-starter-kit:/usr/src/plugin
             - ./.codotype-out:/usr/src/app/.codotype-out
         ports:
-            - "3000:3000"
+            - "8080:8080"
