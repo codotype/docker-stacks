@@ -18,7 +18,9 @@ export default async (req: any, res: any) => {
         await runtime.registerPlugin({
             // absolutePath: process.cwd(),
             // relativePath: "../../../../generators/codotype-generator-starter-kit",
-            relativePath: "../plugin",
+            // relativePath: "../plugin",
+            absolutePath:
+                "/home/aeksco/code/codotype/codotype/packages/generators/codotype-generator-starter-kit",
         });
 
         // Defines bodotype build
