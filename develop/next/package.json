@@ -4,10 +4,10 @@
     "description": "A web project for running a Codotype plugin",
     "main": "index.js",
     "scripts": {
-        "dev": "next",
+        "dev": "next -p 8080",
         "build": "next build",
         "export": "next export",
-        "start": "next start"
+        "start": "next start -p 8080"
     },
     "author": "Alexander Schwartzberg",
     "license": "MIT",

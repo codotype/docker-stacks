@@ -1,10 +1,9 @@
-import * as path from "path";
 import { LocalFileSystemAdapter, NodeRuntime } from "@codotype/runtime";
 import { OUTPUT_DIRECTORY } from "@codotype/runtime/dist/constants";
 import { RuntimeLogBehaviors, ProjectBuild } from "@codotype/core";
 
 const runtime = new NodeRuntime({
-    cwd: path.relative(process.cwd(), "../plugin"),
+    cwd: process.cwd(),
     logBehavior: RuntimeLogBehaviors.normal,
     fileOverwriteBehavior: "force",
     fileSystemAdapter: new LocalFileSystemAdapter(),
@@ -16,11 +15,7 @@ const runtime = new NodeRuntime({
 export default async (req: any, res: any) => {
     try {
         await runtime.registerPlugin({
-            // absolutePath: process.cwd(),
-            // relativePath: "../../../../generators/codotype-generator-starter-kit",
-            // relativePath: "../plugin",
-            absolutePath:
-                "/home/aeksco/code/codotype/codotype/packages/generators/codotype-generator-starter-kit",
+            absolutePath: process.env.PLUGIN_ABSOLUTE_PATH,
         });
 
         // Defines bodotype build
@@ -41,18 +36,20 @@ export default async (req: any, res: any) => {
         res.json({
             filepath:
                 process.cwd() +
+                "/" +
                 OUTPUT_DIRECTORY +
+                "/" +
                 build.projectInput.identifiers.snake,
             type: "LOCAL_PATH", // TODO - pull this into enum
+            // TODO - add support for "LOCAL_DOWNLOAD" from local path + download API route?
         });
         return;
     } catch (err) {
         // throw err;
         console.error(err);
-        res.statusCode = 200;
+        res.statusCode = 500;
         res.json({
-            type: "S3_DOWNLOAD", // TODO - pull this into enum
-            url: "https://google.com",
+            error: "An error has occured",
         });
     }
 

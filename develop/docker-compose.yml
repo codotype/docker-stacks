@@ -6,6 +6,7 @@ services:
         build: ./
         volumes:
             - /home/aeksco/code/codotype/codotype/packages/generators/codotype-generator-starter-kit:/usr/src/plugin
-            - ./.codotype-out:/usr/src/app/.codotype-out
+        environment:
+            - PLUGIN_ABSOLUTE_PATH=/usr/src/plugin
         ports:
             - "8080:8080"

@@ -17,9 +17,7 @@ export default async (_req: any, res: any) => {
     // Registers this generator via relative path
     try {
         await runtime.registerPlugin({
-            // relativePath: "../plugin",
-            absolutePath:
-                "/home/aeksco/code/codotype/codotype/packages/generators/codotype-generator-starter-kit",
+            absolutePath: process.env.PLUGIN_ABSOLUTE_PATH,
         });
         const plugins = await runtime.getPlugins();
         res.statusCode = 200;
