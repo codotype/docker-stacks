@@ -4,6 +4,7 @@ import * as React from "react";
 import dynamic from "next/dynamic";
 import { PluginRunner } from "@codotype/ui/dist/src/pages/web_runtime/PluginRunner";
 import { ProjectEditor } from "@codotype/ui/dist/src/components/ProjectEditor";
+import { AppContainer } from "@codotype/ui/dist/src/components/AppContainer";
 
 const LocalStorageProvider = dynamic(
     // @ts-ignore
@@ -37,18 +38,20 @@ const Page: NextPage<Props> = (props: Props) => {
                 <LocalStorageProvider plugin={plugins[0]}>
                     {/* @ts-ignore */}
                     {({ projectInput, clearProject, setProject }) => (
-                        <ProjectEditor
-                            // @ts-ignore
-                            plugin={plugins[0]}
-                            projectInput={projectInput}
-                            onClickGenerate={() => {
-                                generateCode({
-                                    projectInput,
-                                });
-                            }}
-                            onResetProject={clearProject}
-                            onChange={setProject}
-                        />
+                        <AppContainer plugin={plugins[0]}>
+                            <ProjectEditor
+                                // @ts-ignore
+                                plugin={plugins[0]}
+                                projectInput={projectInput}
+                                onClickGenerate={() => {
+                                    generateCode({
+                                        projectInput,
+                                    });
+                                }}
+                                onResetProject={clearProject}
+                                onChange={setProject}
+                            />
+                        </AppContainer>
                     )}
                 </LocalStorageProvider>
             )}
@@ -58,7 +61,7 @@ const Page: NextPage<Props> = (props: Props) => {
 
 Page.getInitialProps = async ({}) => {
     const response = await axios.request({
-        url: "http://localhost:3000/api/plugins",
+        url: "http://localhost:8080/api/plugins",
     });
     return { plugins: response.data };
 };
