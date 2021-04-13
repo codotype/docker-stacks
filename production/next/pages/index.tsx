@@ -3,21 +3,12 @@ import axios from "axios";
 import * as React from "react";
 import dynamic from "next/dynamic";
 import { PluginRunner } from "@codotype/ui/dist/src/pages/web_runtime/PluginRunner";
+import { ProjectEditor } from "@codotype/ui/dist/src/components/ProjectEditor";
 
 const LocalStorageProvider = dynamic(
     // @ts-ignore
     import("@codotype/ui/dist/src/pages/web_runtime/LocalStorageProvider").then(
         mod => mod.LocalStorageProvider,
-    ),
-    {
-        ssr: false,
-    },
-);
-
-const ProjectEditor = dynamic(
-    // @ts-ignore
-    import("@codotype/ui/dist/src/components/ProjectEditor").then(
-        mod => mod.ProjectEditor,
     ),
     {
         ssr: false,
