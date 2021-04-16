@@ -12,8 +12,8 @@
     "author": "Alexander Schwartzberg",
     "license": "MIT",
     "dependencies": {
-        "@codotype/core": "^0.8.0-canary.12",
-        "@codotype/runtime": "^0.8.0-canary.8",
+        "@codotype/core": "^0.8.0-canary.14",
+        "@codotype/runtime": "^0.8.0-canary.9",
         "@codotype/ui": "^0.8.0-canary.45",
         "next": "^10.0.4",
         "react": "^16.8.6",
