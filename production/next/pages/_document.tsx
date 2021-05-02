@@ -1,11 +1,13 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import { SocialMeta } from "@codotype/ui/dist/src/components/Meta";
 
 class MyDocument extends Document {
     render() {
         return (
             <Html>
                 <Head>
-                    <title>Codotype - Loading...</title>
+                    <title>Codotype - Building Better Boilerplate</title>
+                    <SocialMeta />
                 </Head>
                 <body className="bg-gray-200">
                     <Main />

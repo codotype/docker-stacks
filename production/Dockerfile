@@ -10,7 +10,8 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # Copy dependency definitions
-COPY ./next /usr/src/app/
+# COPY ./next /usr/src/app/
+COPY ./web-next /usr/src/app/
 
 # Install dependecies
 RUN yarn install
